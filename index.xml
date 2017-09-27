@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>私人领地</title>
     <link>https://bibu2651.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on 私人领地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Sep 2017 19:38:04 +0800</lastBuildDate>
@@ -24,6 +24,16 @@
  登门槛效应  跟别人提要求时，先提一个小要求，再通过鼓励，向其提出更高要求，这样的方式更易被人接受。（达到一个具体目标时，可以从用户角度先把问题分解成较简单的组合）
  鸟笼效应  如果一个人的客厅有了一只空鸟笼，过了一段时间他很可能会买一只鸟回来。用户偶然获得一个他不须要的东西后，可能会不自觉地添加更多自己不需要的东西
  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://bibu2651.github.io/post/splashactivity%E5%90%AF%E5%8A%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bibu2651.github.io/post/splashactivity%E5%90%AF%E5%8A%A8/</guid>
+      <description>启动登录流程 [TOC]:
+SplashActivity启动  Splash的第一要务是要快速展示给用户，所以在它的onCreate函数里并不作耗时的初始化操作，而是延迟到afterFirstShowWindow  public void startMusic(final Types.SSongInfo songInfo) { MLog.info(TAG, &amp;quot;[startMusic],start music id:%d name:%s&amp;quot;, songInfo.songId, songInfo.songName); DownloadPool.instance().cancelPlayingTask(); currentSong = songInfo; if (isDownloaded(songInfo.songId)) { mMusicHelper.playMusic(YYFileUtils.getYYMusicPath(songInfo.songId), true); } else { mMusicHelper.pauseMusic(); MusicSDKHelper.checkOnlineSong(songInfo.songId, this); } if (MakeFriendsApplication.instance().getModel(RoomModel.class).getHeadsetPlugState() != HeadsetPlugReceiver.HEADSET_PLUG_IN &amp;amp;&amp;amp; isNeedShowNoHeadsetToast()) { ToastUtil.show(MakeFriendsApplication.getApplication(), R.string.ww_room_no_song_tip); } currentAction = Types.TRoomMusicAction.kRoomMusicStart; NotificationCenter.INSTANCE.getObserver(RoomCallbacks.OnSongPlayStateChangeListener.class).onSongPlayStateChange(songInfo, Types.TRoomMusicAction.kRoomMusicStart); sendMusicPlayAction(Types.TRoomMusicAction.kRoomMusicStart); }   在SplashActivity的afterFirstShowWindow函数里，作真正的初始化工作   protected void afterFirstShowWindow() { super.afterFirstShowWindow(); runSplash(); }   目前的SplashActivity中，没有去判断当前是否有帐号，最终都会走到finishSplash 这个函数   private void finishSplash() { boolean hasMainActivity = VLApplication.</description>
     </item>
     
     <item>
